@@ -1,5 +1,5 @@
 {
-  "name": "@vue-pivottable/plotly-renderer",
+  "name": "@vue3-pivottable/plotly-renderer",
   "version": "1.0.0",
   "main": "dist/plotly-renderer.mjs",
   "files": [
@@ -33,5 +33,9 @@
   "dependencies": {
     "@seungwoo321/vue-plotly": "^1.1.0",
     "vue-pivottable": "^0.4.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.11"
   }
 }
