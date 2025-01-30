@@ -1,5 +1,5 @@
 {
-  "name": "@vue3-pivottable/plotly-renderer",
+  "name": "@quantify/vue3-pivottable-plotly-renderer",
   "version": "1.0.0",
   "main": "dist/plotly-renderer.mjs",
   "files": [
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:quantify/vue3-pivottable-plotly-renderer.git"
+    "url": "git+ssh://git@github.com/quantify/vue3-pivottable-plotly-renderer.git"
   },
   "keywords": [
     "vue",
