@@ -1,6 +1,7 @@
+import { h } from 'vue'
 import { PivotUtilities } from 'vue-pivottable'
 import defaultProps from './common'
-import { Plotly } from '@seungwoo321/vue-plotly'
+import { VuePlotly as Plotly } from 'vue3-plotly'
 
 function makeRenderer (opts = {}, traceOptions = {}, layoutOptions = {}, transpose = false) {
   const plotlyRenderer = {
@@ -14,7 +15,7 @@ function makeRenderer (opts = {}, traceOptions = {}, layoutOptions = {}, transpo
         }
       }
     },
-    render (h) {
+    render () {
       const pivotData = new PivotUtilities.PivotData(this.$props)
       const rowKeys = pivotData.getRowKeys()
       const colKeys = pivotData.getColKeys()
@@ -92,19 +93,18 @@ function makeRenderer (opts = {}, traceOptions = {}, layoutOptions = {}, transpo
         }
       }
       return h(Plotly, {
-        props: {
-          data,
-          layout: Object.assign({},
-            layout,
-            layoutOptions,
-            this.$props.plotlyOptions
-          )
-        }
+        data,
+        layout: Object.assign({},
+          layout,
+          layoutOptions,
+          this.$props.plotlyOptions
+        )
       })
     }
   }
   return plotlyRenderer
 }
+
 function makeScatterRenderer (opts = {}) {
   const scatterRenderer = {
     name: opts.name,
@@ -146,14 +146,11 @@ function makeScatterRenderer (opts = {}) {
       }
 
       return h(Plotly, {
-        props: {
-          data: [data],
-
-          layout: Object.assign({},
-            layout,
-            this.$props.plotlyOptions
-          )
-        }
+        data: [data],
+        layout: Object.assign({},
+          layout,
+          this.$props.plotlyOptions
+        )
       })
     }
   }
